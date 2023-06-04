@@ -5,6 +5,7 @@
 #include "stdlib.h"
 #include "string.h"
 #include "Service.h"
+#include <limits.h>
 
 Node_array* new_node_array()
     {

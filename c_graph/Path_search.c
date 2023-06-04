@@ -6,6 +6,7 @@
 #include "Node_array.h"
 #include "Path_search.h"
 #include "Service.h"
+#include <limits.h>
 
 void search_path(Node* from,Node* to)
     {
