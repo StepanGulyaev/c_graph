@@ -72,16 +72,11 @@ void search_shortest_path(Node* from,Node* to,Node_array* array)
         {
         Node_array* copy = new_node_array();
         construct_node_array(copy);
-        push_to_array(from,copy);
-        for(int i = 0; i < array->size;i++)
-            {
-            if(array->node_arr[i] != from)
-                {
-                push_to_array(array->node_arr[i],copy);
-                }
-            }
+        copy_with_new_nodes(copy, array);
 
-        bellman_ford_algorithm(from,to,copy,&result);
+        Node* from_copy = get_address_by_name(from->node_id, copy);
+        Node* to_copy = get_address_by_name(to->node_id, copy);
+        bellman_ford_algorithm(from_copy,to_copy,copy,&result);
         delete_node_array(copy);
         }
     else

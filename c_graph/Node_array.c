@@ -342,6 +342,7 @@ void copy_with_new_nodes(Node_array* copy,Node_array* original)
         {
         Node* node = new_node();
         construct_node(node);
+        node->node_id = (char*)calloc(strlen(original->node_arr[i]->node_id)+1,sizeof(char));
         strcpy(node->node_id,original->node_arr[i]->node_id);
         node->shortest_way_to = original->node_arr[i]->shortest_way_to;
         node->visit_tag = original->node_arr[i]->visit_tag;
